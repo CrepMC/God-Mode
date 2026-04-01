@@ -1,0 +1,20 @@
+{
+  "manifest_version": 3,
+  "name": "God Mode App",
+  "version": "1.0",
+  "description": "Tự động khôi phục giao diện. Click vào icon để bật chế độ chỉnh sửa.",
+  "permissions": ["activeTab", "scripting"],
+  "action": {
+    "default_title": "Bật God Mode Edit"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["auto-restore.js"],
+      "run_at": "document_end"
+    }
+  ],
+  "background": {
+    "service_worker": "background.js"
+  }
+}
